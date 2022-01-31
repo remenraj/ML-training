@@ -27,7 +27,7 @@ h = sigmoid(X * theta);
 J = (1 / m) * ((-y' * log(h)) - (1 - y)' * log(1 - h)); % scalar
 
 % gradient vector of theta
-grad = (1 / m) * (X' * (h - y))
+grad = (1 / m) * (X' * (h - y));
 
 
 
