@@ -12,7 +12,19 @@ theta = zeros(size(X, 2), 1);
 
 % ---------------------- Sample Solution ----------------------
 
+% pinv() is used returns the Moore-Penrose pseudo inverse of a matrix using 
+% Singular value. The inv() function returns the inverse of the matrix. 
+% The pinv() function is useful when your matrix is non-invertible(singular matrix) 
+% or Determinant of that Matrix =0.
 
+
+% X is a matrix of order [mx3] where the first column is ones
+% y is a vector of order [mx1]
+
+% pinv(X'*X) is a matrix of order [3x3]
+% X'*y is a vector of order [3x1]
+
+% theta is a vector of order [3x1] 
 theta = pinv(X' * X) * X' * y
 
 % -------------------------------------------------------------

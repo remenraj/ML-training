@@ -10,7 +10,7 @@ A = [];
 %               and then set them accordingly. 
 
 
-
+% creating 5x5 identity matrix
 A = eye(5);
 
 

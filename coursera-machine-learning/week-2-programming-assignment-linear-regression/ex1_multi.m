@@ -35,7 +35,11 @@ fprintf('Loading data ...\n');
 
 %% Load Data
 data = load('ex1data2.txt');
+
+% X: loads columns:1,2 from data (includes all the rows)
 X = data(:, 1:2);
+
+% y: loads the 3rd column from data
 y = data(:, 3);
 m = length(y);
 
@@ -126,9 +130,15 @@ fprintf('\n');
 % not need to be normalized.
 % You should change this
 
+% feature scaling the values
 P = ([1650 3] - mu) ./ sigma;
+% adding column of ones
 P = [ones(1, 1) P];
 
+% calculating the price
+% P is a matrix of order [1x3]
+% theta is a vector of order [3x1]
+% price is a scalar value
 price = P * theta; 
 
 % ============================================================
@@ -174,9 +184,12 @@ fprintf('\n');
 % Estimate the price of a 1650 sq-ft, 3 br house
 % ====================== YOUR CODE HERE ======================
 
+% feature normalization is not required when using normal method
+P = [1 1650 3];
 
-P = [1 1650 3]
-
+% P is a matrix of order [1x3]
+% theta is a vector of order [3x1]
+% price is a scalar value
 price = P * theta; 
 
 

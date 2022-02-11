@@ -18,18 +18,20 @@ for iter = 1:num_iters
     %
 
 
+    % alpha is the learning rate constant
+    % order of X is [mx3] where the first column is ones
+    % y is a vector of order [mx1]
+        
+    % X*theta gives a vector of order [mx1]
+    % X*(X*theta - y) gives a vector of order [3x1]
+    % theta is a vector of order [3x1]
     theta = theta - (alpha / m) * ( (X') * (X * theta - y));
-
-
-    
-
-
-
 
 
     % ============================================================
 
     % Save the cost J in every iteration    
+    % Using J_history we can plot the 3d graph of various J values with theta
     J_history(iter) = computeCostMulti(X, y, theta);
 
 end

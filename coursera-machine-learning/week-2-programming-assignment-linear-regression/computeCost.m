@@ -13,7 +13,12 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
+% order of X is [mx2] where the first column is ones
+% theta is a vector of order [2x1]
+% y is a vector of order [mx1]
 
+% X*theta gives a vector of order [mx1]
+% Cost function J is scalar
 J = (1 / (2 * m)) * sum((X * theta - y).^ 2);
 
 
