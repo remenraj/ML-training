@@ -55,9 +55,11 @@ hold off;
 
 % Note that mapFeature also adds a column of ones for us, so the intercept
 % term is handled
+% order is X is now [mx28] where the first column is ones
 X = mapFeature(X(:,1), X(:,2));
 
 % Initialize fitting parameters
+% initial_theta is a vector of order [28x1]
 initial_theta = zeros(size(X, 2), 1);
 
 % Set regularization parameter lambda to 1

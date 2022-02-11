@@ -20,13 +20,28 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
-% hypothesis function of order m x 1
+% X is a matrix of order [mx3] where the first column is ones
+
+% theta is a vector of order [3x1] where 3 is the number of columns in X (after 
+% adding column of ones)
+
+% hypothesis function of order [mx1]
 h = sigmoid(X * theta); 
 
+
+
+% y is a vector of order [mx1]
+% log(h) takes log of every element in h
+% y'*log(h) is scalar value
+% (1-y), (1-h) subtracts 1 from every element in y, h respectively
+% (1-y)'*log(1-h) is a scalar value
 % scalar cost function in logistic regression
 J = (1 / m) * ((-y' * log(h)) - (1 - y)' * log(1 - h)); % scalar
 
-% gradient vector of theta
+
+% X' is a matrix of order [3xm]
+% (h-y) is a vector of order [mx1]
+% grad/gradient is a vector of theta or order [3x1]
 grad = (1 / m) * (X' * (h - y));
 
 

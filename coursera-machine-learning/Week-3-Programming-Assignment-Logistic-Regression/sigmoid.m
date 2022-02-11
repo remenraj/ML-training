@@ -10,10 +10,11 @@ g = zeros(size(z));
 %               vector or scalar).
 
 % h_theta(x) = g(z)
+% X*theta is a vector of order [mx1]
 
-% z = X * theta
+% z = X * theta   order [mx1]
 
-% sigmoid function
+% sigmoid function returns a vector of order [mx1]
 g = 1./(1+exp(-z));
 
 
