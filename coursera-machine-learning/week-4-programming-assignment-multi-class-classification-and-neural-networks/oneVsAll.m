@@ -10,16 +10,15 @@ function [all_theta] = oneVsAll(X, y, num_labels, lambda)
 % Some useful variables
 % m is the number of training set. Here m = 5000
 m = size(X, 1);
-% n is the total number of pixels. 20x20= 400
+% n is the total number of pixels. Here 20x20= 400
 n = size(X, 2);
 
 % You need to return the following variables correctly 
-% here num_labels = 10. There are 10 classes here (0-9)
+% here num_labels = 10, since there are 10 output classes here (0-9)
 % and n = 400
-% order of all_theta is [10x401]
-
 % each row of all_theta corresponds to the learned logistic regression  
 % parameters for one class.
+% order of all_theta is [num_labels x(n+1)]=[10x401]
 all_theta = zeros(num_labels, n + 1);
 
 % Add ones to the X data matrix
